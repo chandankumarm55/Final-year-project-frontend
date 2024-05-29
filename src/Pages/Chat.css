@@ -1,0 +1,19 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.chat-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,64 @@
+.sidebar {
+    width: 40%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #e0e0e0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3f51b5;
+    color: #fff;
+    position: relative;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.add-chat-button {
+    background-color: #3f51b5;
+    color: #fff;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.profile {
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.popup-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background-color: #f0f0f0;
+}

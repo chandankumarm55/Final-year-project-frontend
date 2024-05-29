@@ -1,0 +1,78 @@
+.register-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+}
+
+.register-container .info {
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    background-image: url('https://w0.peakpx.com/wallpaper/168/976/HD-wallpaper-sky-blue-color-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10rem;
+    padding-left: 2rem;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.register-container .form {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.register-container .form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 30px;
+    gap: 0.5rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    margin-left: 10px;
+    color: #8abae9;
+}
+
+.header svg {
+    color: #8abae9;
+}
+
+.regiter-container .form form p {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        grid-template-columns: 1fr;
+    }
+    .form {
+        width: 80%;
+        padding: 0rem;
+    }
+    .register-container .form form {
+        padding: 0rem;
+    }
+}

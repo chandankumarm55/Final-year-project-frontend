@@ -1,0 +1,35 @@
+/* MessageItem.css */
+
+.message-item {
+    display: inline-block;
+    /* Ensure the background only wraps around the text */
+    max-width: 60%;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    /* Ensure long words break and wrap within the box */
+    white-space: pre-wrap;
+    /* Ensure the text respects new lines */
+}
+
+.message-item.me {
+    background-color: #3f51b5;
+    color: #fff;
+    margin-left: auto;
+    align-self: flex-end;
+    /* Aligns the current user's messages to the right */
+}
+
+.message-item.other {
+    background-color: #e0e0e0;
+    color: #333;
+    align-self: flex-start;
+    /* Aligns other users' messages to the left */
+}
+
+.timings {
+    margin-left: 2px;
+    font-weight: 100;
+    font-size: x-small;
+}
