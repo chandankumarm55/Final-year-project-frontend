@@ -1,9 +1,18 @@
 .chat-container {
     display: flex;
-    height: 100vh;
+    height: calc(90dvh - 1rem);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1rem;
+    overflow: hidden;
 }
 
 .chat-content {
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -16,4 +25,11 @@
     align-items: center;
     flex: 1;
     background-color: #f9f9f9;
+}
+
+@media (max-width:900px) {
+    .chat-container {
+        height: 165vh;
+        width: 100dvh;
+    }
 }

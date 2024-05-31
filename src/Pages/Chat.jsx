@@ -6,14 +6,14 @@ import MessageInput from '../components/MessageInput';
 import './Chat.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedUser } from '../redux/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Chat = () => {
+    const navigate = useNavigate()
     const { authUser } = useSelector(store => store.user)
     const { selectedUser } = useSelector(store => store.user);
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //   return () => dispatch(setSelectedUser(null))
-    // }, [])
+
     return (
         <div className='chat-container'>
             <Sidebar />

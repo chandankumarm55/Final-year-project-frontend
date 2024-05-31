@@ -17,6 +17,10 @@
     position: relative;
 }
 
+.sidebar-header h4 {
+    font-size: 25px;
+}
+
 .sidebar-footer {
     padding: 1rem;
     display: flex;
@@ -38,6 +42,11 @@
     cursor: pointer;
 }
 
+.profile img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 .popup {
     position: absolute;
     top: 60px;
@@ -46,7 +55,14 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
+    padding: 1rem;
+    width: 60%;
     z-index: 1000;
+}
+
+.popup a {
+    text-decoration: none;
+    color: black;
 }
 
 .popup-button {
@@ -61,4 +77,36 @@
 
 .popup-button:hover {
     background-color: #f0f0f0;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin: 0.3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.input-container .input {
+    width: 85%;
+    padding: 0.2rem;
+    outline: none;
+    border: none;
+}
+
+@media (max-width:757px) {
+    .sidebar-header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .popup {
+        width: 70%;
+    }
 }

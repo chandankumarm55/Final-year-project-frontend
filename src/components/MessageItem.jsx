@@ -11,11 +11,17 @@ const MessageItem = ({ message }) => {
     }, [message]);
 
     const isSentByCurrentUser = message?.senderId === authUser?._id;
+    const formateTime = (time) => { }
+    const formatTime = (timestamp) => {
+        const date = new Date(timestamp);
+
+        return date.toLocaleString([], { hour: '2-digit', minute: '2-digit' });
+    };
 
     return (
         <div ref={ scroll } className={ `message-item ${isSentByCurrentUser ? 'me' : 'other'}` }>
             <div className="message-content">
-                <p>{ message.message }<span className='timings'> 12:45</span></p>
+                <p>{ message.message } <span className='timings'>{ formatTime(message.createdAt) }</span></p>
             </div>
         </div>
     );

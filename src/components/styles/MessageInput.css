@@ -4,6 +4,7 @@
     padding: 0.5rem;
     border-top: 1px solid #e0e0e0;
     background-color: #fff;
+    position: relative;
 }
 
 .message-input input {
@@ -17,11 +18,36 @@
     outline: none;
 }
 
-.message-input button {
-    background-color: #3f51b5;
+.message-input .emoji {
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.message-input .submit {
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     cursor: pointer;
+    background-color: rgb(140, 140, 234);
+}
+
+.emoji-picker-container {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+@media(max-width:757px) {
+    .message-input {
+        padding: 0%;
+    }
+    .message-input button {
+        padding: 0%;
+    }
 }

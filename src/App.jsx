@@ -10,7 +10,7 @@ import io from 'socket.io-client';
 import { host } from './utils/Constant';
 import { setSocekt } from './redux/socketSlice';
 import { setOnlineUsers } from './redux/userSlice';
-
+import './App.css'
 function App() {
   const disptach = useDispatch()
   const { authUser } = useSelector(store => store.user);
