@@ -14,6 +14,12 @@ const Chat = () => {
     const { selectedUser } = useSelector(store => store.user);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (!authUser) {
+            navigate('/login')
+        }
+    })
+
     return (
         <div className='chat-container'>
             <Sidebar />

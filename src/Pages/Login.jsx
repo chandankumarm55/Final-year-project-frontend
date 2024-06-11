@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField, Button, Box } from '@mui/material';
 import './Login.css';
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '../redux/userSlice';
 import { host } from '../utils/Constant';
 
 const Login = () => {
     const dispatch = useDispatch()
+    const { authUser } = useSelector(store => store.user)
     const [usernameOrEmail, setUsernameOrEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    useEffect(() => {
+        if (authUser) {
+            navigate('/')
+        }
+    })
 
     const validation = async () => {
 

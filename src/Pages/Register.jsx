@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField, Button, Box } from '@mui/material';
 import './Register.css';
 import { BiSolidMessageRoundedDots } from "react-icons/bi";
@@ -6,14 +6,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import { host } from '../utils/Constant';
+import { useSelector } from 'react-redux';
 
 const Register = () => {
     const navigate = useNavigate();
+    const { authUser } = useSelector(store => store.user)
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [fullname, setFullname] = useState('');
+
+    useEffect(() => {
+        if (authUser) {
+            navigate('/')
+        }
+    })
+
     const validation = (e) => {
         e.preventDefault();
 
@@ -65,7 +74,7 @@ const Register = () => {
             console.log(response);
             if (response) {
                 toast.success(response.data.message);
-                navigate('/');
+                navigate('/login');
             }
         } catch (error) {
             toast.error(error.response.data.message);

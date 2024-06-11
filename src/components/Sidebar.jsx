@@ -8,8 +8,9 @@ import { TextField } from '@mui/material';
 import { host } from '../utils/Constant';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAuthUser } from '../redux/userSlice';
+import { setAuthUser, setBlockedUser, setOnlineUsers, setOtherUsers, setSelectedUser } from '../redux/userSlice';
 import { IoSearchSharp } from "react-icons/io5";
+import { setMessages } from '../redux/messageSlice';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -24,7 +25,13 @@ const Sidebar = () => {
             const res = await axios.get(`${host}/user/logout`);
             toast.success(res.data.message);
             dispatch(setAuthUser(null));
+            dispatch(setSelectedUser(null))
+            dispatch(setOtherUsers(null))
+            dispatch(setMessages())
+            dispatch(setBlockedUser())
+            dispatch(setOnlineUsers(null))
             navigate('/login');
+
         } catch (error) {
             toast.error(error.response.data.message);
             console.log(error);
@@ -59,7 +66,7 @@ const Sidebar = () => {
                 <h4>Chatify</h4>
                 <div className='profile' onClick={ handlePopUp }>
                     <img
-                        src={ authUser?.profilePhoto ? `http://localhost:5000/${authUser?.profilePhoto}` : 'https://cdn-icons-png.flaticon.com/512/149/149071.png' }
+                        src={ authUser?.profile || authUser?.profilePhoto ? `http://localhost:5000/${authUser?.profile}` : 'https://cdn-icons-png.flaticon.com/512/149/149071.png' }
                         alt="Avatar"
                         className="avatar"
 

@@ -8,7 +8,7 @@ import EmojiPicker from 'emoji-picker-react';
 
 const MessageInput = () => {
     const { messages } = useSelector((store) => store.message);
-    const { selectedUser } = useSelector((store) => store.user);
+    const { selectedUser, authUser } = useSelector((store) => store.user);
     const [message, setMessage] = useState('');
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
     const emojiPickerRef = useRef(null);
@@ -47,31 +47,42 @@ const MessageInput = () => {
         };
     }, [showEmojiPicker]);
 
+    // Check if either user has blocked the other
+    const isBlocked = authUser?.blockedUsers?.includes(selectedUser?._id) || selectedUser?.blockedUsers?.includes(authUser?._id);
+
     return (
         <>
-            <div className="message-input">
-                <button onClick={ () => setShowEmojiPicker(!showEmojiPicker) } className='emoji'>&#128512;</button>
-                <input
-                    type="text"
-                    placeholder="Type a message..."
-                    value={ message }
-                    onChange={ (e) => setMessage(e.target.value) }
-                />
-                <button type="submit" onClick={ onSubmitHandler } className='submit'>
-                    &#10148;
-                </button>
-                { showEmojiPicker && (
-                    <div className="emoji-picker-container" ref={ emojiPickerRef }>
-                        <EmojiPicker
-                            onEmojiClick={ handleEmojiClick }
-                            searchDisabled={ true }
-                            previewConfig={ {
-                                showPreview: false,
-                            } }
-                        />
-                    </div>
-                ) }
-            </div>
+            { isBlocked ? (
+                <div className="blocked-message">
+                    { authUser?.blockedUsers?.includes(selectedUser?._id)
+                        ? 'You have blocked this user.'
+                        : `${selectedUser?.fullname} has blocked you.` }
+                </div>
+            ) : (
+                <div className="message-input">
+                    <button onClick={ () => setShowEmojiPicker(!showEmojiPicker) } className='emoji'>&#128512;</button>
+                    <input
+                        type="text"
+                        placeholder="Type a message..."
+                        value={ message }
+                        onChange={ (e) => setMessage(e.target.value) }
+                    />
+                    <button type="submit" onClick={ onSubmitHandler } className='submit'>
+                        &#10148;
+                    </button>
+                    { showEmojiPicker && (
+                        <div className="emoji-picker-container" ref={ emojiPickerRef }>
+                            <EmojiPicker
+                                onEmojiClick={ handleEmojiClick }
+                                searchDisabled={ true }
+                                previewConfig={ {
+                                    showPreview: false,
+                                } }
+                            />
+                        </div>
+                    ) }
+                </div>
+            ) }
         </>
     );
 };

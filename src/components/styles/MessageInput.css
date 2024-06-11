@@ -43,6 +43,14 @@
     z-index: 1000;
 }
 
+.blocked-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(231, 51, 51);
+    font-size: large;
+}
+
 @media(max-width:757px) {
     .message-input {
         padding: 0%;
