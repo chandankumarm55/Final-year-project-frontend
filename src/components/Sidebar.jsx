@@ -66,7 +66,7 @@ const Sidebar = () => {
                 <h4>Chatify</h4>
                 <div className='profile' onClick={ handlePopUp }>
                     <img
-                        src={ authUser?.profile || authUser?.profilePhoto ? `http://localhost:5000/${authUser?.profile}` : 'https://cdn-icons-png.flaticon.com/512/149/149071.png' }
+                        src={ authUser?.profile || authUser?.profilePhoto ? `${host}/${authUser?.profile}` : 'https://cdn-icons-png.flaticon.com/512/149/149071.png' }
                         alt="Avatar"
                         className="avatar"
 
