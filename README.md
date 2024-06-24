@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# Chattify: An Instant Messaging Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+Chattify is an instant messaging platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js) that allows users to chat in real-time. It supports features like user authentication, profile management, chat history, blocking users, and more.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Screenshots
+![Screenshot 1](./chat1.jpg)
+![Screenshot 2](./chat2.jpg)
+![Screenshot 3](./chat3.jpg)
+![Screenshot 4](./chat4.jpg)
+![Screenshot 4](./chat5.jpg)
+![Screenshot 4](./chat6.jpg)
+![Screenshot 4](./chat7.jpg)
 
-### `npm start`
+## Features
+- User registration and login with email, username, and password.
+- Real-time chat functionality.
+- Blocking and unblocking users.
+- Adding and updating bio.
+- Deleting chat history.
+- Deleting account permanently.
+- Sending emojis.
+- Online and offline status indication.
+- Profile picture upload and update.
+- JWT token-based authentication.
+- Responsive design.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React.js** (version 17 or higher)
+- **Redux** (for state management)
+- **Axios** (for making HTTP requests)
+- **Socket.io-client** (for real-time communication)
+- **Material-UI** (for user interface components)
+- **React Router** (for navigation)
+- **React Icons** (for iconography)
 
-### `npm test`
+### Backend
+- **Express.js** (for creating the server)
+- **Mongoose** (for MongoDB object modeling)
+- **bcryptjs** (for password hashing)
+- **jsonwebtoken** (for authentication)
+- **Multer** (for file uploads)
+- **Socket.io** (for real-time communication)
+- **cookie-parser** (for handling cookies)
+- **cors** (for enabling Cross-Origin Resource Sharing)
+- **body-parser** (for parsing incoming request bodies)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js and npm installed on your machine.
+- MongoDB database (you can use MongoDB Atlas for a cloud-based solution).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/chattify.git
+    cd chattify
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Backend Setup:**
+    - Navigate to the `server` directory:
+      ```sh
+      cd server
+      ```
+    - Install dependencies:
+      ```sh
+      npm install
+      ```
+    - Create a `.env` file in the root of the `server` directory and add the following environment variables:
+      ```env
+      PORT=5000
+      MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/
+      JWT_KEY=<your_jwt_secret_key>
+      FRONT_END_URL=http://localhost:3000
+      ```
+    - Start the server:
+      ```sh
+      npm start
+      ```
 
-### `npm run eject`
+3. **Frontend Setup:**
+    - Navigate to the `client` directory:
+      ```sh
+      cd ../client
+      ```
+    - Install dependencies:
+      ```sh
+      npm install
+      ```
+    - Update the backend URL in `src/utilities/constant.js`:
+      ```javascript
+      export const BACKEND_URL = 'http://localhost:5000';
+      ```
+    - Start the frontend development server:
+      ```sh
+      npm start
+      ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the Application
+- Open your browser and navigate to `http://localhost:3000` to access the frontend.
+- The backend server will be running on `http://localhost:5000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Unit Testing
+- **Objective:** Ensure individual functions and components work correctly.
+- **Example:** Test user validation functions during registration and login.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Integration Testing
+- **Objective:** Verify interactions between different parts of the application.
+- **Example:** Test the flow from user login to accessing the chat interface.
 
-## Learn More
+### System Testing
+- **Objective:** Test the entire application flow to ensure it meets requirements.
+- **Example:** Test end-to-end scenarios like user registration, sending a message, and deleting a chat.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Token-Based Authentication Testing
+- **Objective:** Ensure that users cannot send messages without a valid token.
+- **Example:** Test scenarios where the token is missing, expired, or invalid.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Enhancements
+- Implement email verification during registration.
+- Add a password recovery feature.
+- Enhance the UI with more themes and customization options.
+- Implement voice and video calling features.
+- Integrate AI-based chatbots for automated responses.
 
-### Code Splitting
+## References
+- [React.js Documentation](https://reactjs.org/docs/getting-started.html)
+- [Redux Documentation](https://redux.js.org/)
+- [Material-UI Documentation](https://material-ui.com/getting-started/installation/)
+- [React Router Documentation](https://reactrouter.com/)
+- [Axios Documentation](https://axios-http.com/docs/intro)
+- [Socket.io Documentation](https://socket.io/docs/v4/)
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Express.js Documentation](https://expressjs.com/)
+- [MongoDB Documentation](https://docs.mongodb.com/)
+- [Mongoose Documentation](https://mongoosejs.com/docs/)
+- [bcryptjs Documentation](https://www.npmjs.com/package/bcryptjs)
+- [jsonwebtoken Documentation](https://www.npmjs.com/package/jsonwebtoken)
+- [Multer Documentation](https://github.com/expressjs/multer)
+- [cookie-parser Documentation](https://www.npmjs.com/package/cookie-parser)
+- [cors Documentation](https://www.npmjs.com/package/cors)
+- [body-parser Documentation](https://www.npmjs.com/package/body-parser)
+- [Material-UI Documentation](https://mui.com/)
+- [jsonwebtoken Documentation](https://www.npmjs.com/package/jsonwebtoken)
+- [Socket.io-client Documentation](https://socket.io/docs/v4/client-api/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tools and Editors
+- **VS Code**: A source code editor that provides a range of features including debugging, syntax highlighting, and Git integration.
+- **MongoDB Atlas**: A cloud-based MongoDB service for managing databases.
+- **Postman**: A collaboration platform for API development.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README file provides an overview of the Chattify application, details on setup and installation, testing phases, and references to all necessary documentation.
