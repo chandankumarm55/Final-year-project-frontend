@@ -56,13 +56,18 @@ Chattify is an instant messaging platform built using the MERN stack (MongoDB, E
 
 ### Installation
 
-1. **Clone the repository:**
+   1. **Clone the Frontend repository:**
     ```sh
-    git clone https://github.com/your-username/chattify.git
+    git https://github.com/chandankumarm55/Final-year-project-frontend.git
     cd chattify
     ```
+ 2.**Clone the Backend repository:**
+    ```sh
+    git https://github.com/chandankumarm55/Final-Year-Project-Backend.git
+    cd chatt
+    ```
 
-2. **Backend Setup:**
+3. **Backend Setup:**
     - Navigate to the `server` directory:
       ```sh
       cd server
@@ -83,7 +88,7 @@ Chattify is an instant messaging platform built using the MERN stack (MongoDB, E
       npm start
       ```
 
-3. **Frontend Setup:**
+4. **Frontend Setup:**
     - Navigate to the `client` directory:
       ```sh
       cd ../client
@@ -104,31 +109,9 @@ Chattify is an instant messaging platform built using the MERN stack (MongoDB, E
 ### Running the Application
 - Open your browser and navigate to `http://localhost:3000` to access the frontend.
 - The backend server will be running on `http://localhost:5000`.
-
-## Testing
-
-### Unit Testing
-- **Objective:** Ensure individual functions and components work correctly.
-- **Example:** Test user validation functions during registration and login.
-
-### Integration Testing
-- **Objective:** Verify interactions between different parts of the application.
-- **Example:** Test the flow from user login to accessing the chat interface.
-
-### System Testing
-- **Objective:** Test the entire application flow to ensure it meets requirements.
-- **Example:** Test end-to-end scenarios like user registration, sending a message, and deleting a chat.
-
-### Token-Based Authentication Testing
+ased Authentication Testing
 - **Objective:** Ensure that users cannot send messages without a valid token.
 - **Example:** Test scenarios where the token is missing, expired, or invalid.
-
-## Future Enhancements
-- Implement email verification during registration.
-- Add a password recovery feature.
-- Enhance the UI with more themes and customization options.
-- Implement voice and video calling features.
-- Integrate AI-based chatbots for automated responses.
 
 ## References
 - [React.js Documentation](https://reactjs.org/docs/getting-started.html)
@@ -155,7 +138,3 @@ Chattify is an instant messaging platform built using the MERN stack (MongoDB, E
 - **VS Code**: A source code editor that provides a range of features including debugging, syntax highlighting, and Git integration.
 - **MongoDB Atlas**: A cloud-based MongoDB service for managing databases.
 - **Postman**: A collaboration platform for API development.
-
----
-
-This README file provides an overview of the Chattify application, details on setup and installation, testing phases, and references to all necessary documentation.
